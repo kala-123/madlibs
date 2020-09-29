@@ -1,0 +1,27 @@
+# madlibs
+the famous madlibs story generator game!!
+# Program to read a random madlib from a file and generate it back
+import random
+
+# Open the madlibs text file
+#f = open('madlibs.txt','rad the lines from the file into a list
+allLines = ["person,place,time # i went to the %2 with %1 at %3",
+            "object,person#A %1 flew into %2's face."]
+
+# Choose a random madlib from the list
+madlib = random.choice(allLines)
+
+# Separate the input list from the story
+halves = madlib.split("#")
+
+# The second item is the madlib text 
+madlibText = halves[1]
+
+# Now get the inputs required one by one
+inputs = halves[0].split(",")
+
+inputStore = [""]
+
+for item in inputs:
+    inputStore.append(raw_input("Enter a "+item+": "))
+
